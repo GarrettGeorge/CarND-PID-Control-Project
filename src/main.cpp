@@ -32,6 +32,13 @@ std::string hasData(std::string s) {
 
 int main(int argc, char *argv[])
 {
+  if (argc != 4) {
+    std::cout << "- pid binary requires 3 parameters, 1 for each coeffcient" << std::endl <<
+      "- Recommended parameters = {.15, 1.1, .003} | ./pid .15 1.1 .003" << std::endl <<
+      "exiting..." << std::endl;
+    exit(1);
+  }
+  
   uWS::Hub h;
 
   PID pid;
